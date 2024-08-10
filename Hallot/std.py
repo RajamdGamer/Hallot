@@ -32,13 +32,11 @@ class DepartmentSelectionApp:
         self.canvas.bind_all("<Button-5>", self._on_mousewheel)  # For Linux systems
 
         self.ug_programmes = [
-            "B.Sc. Maths", "B.Sc. Maths with CA", "B.Sc. CS", "B.Sc. CS (GCD)", "B.Sc. CS (AI & DS)",
-            "B.Sc. CS (CS)", "B.Sc. CS (DA)", "B.Sc. Forensic Science", "B.Sc. IT", "BCA", "B.Com.",
-            "B.Com. (DM and DM)", "B.Com. (CA)", "B.Com. (PA)", "B.Com. Finance", "B.Com. (IT)", "BBA",
-            "BBA (CA)", "B.Sc. CD & F", "B.Sc. CS & HM", "B.A. English Lit.,", "B.Sc. Physics", "B.Sc. Chemistry",
-            "B.Sc. Psychology", "B.Sc. CS with Cloud & Information Security", "B.Sc. CS with Block Chain Technology",
-            "B.Sc. CS with IOT"
-        ]
+            "B.Sc. Computer Science", "B.Sc. Computer Technology", "B.Sc. Information Technology","B.Sc. Computer Science with Graphics and Creative Design",
+            "B.Sc. Computer Science (AI & DS)", "B.Sc. CS with Cyber Security", "B.Sc. CS and Data Analytics", "B.Sc. CS (DevOps and Cloud)", "B.Sc. CS (FSWD)",
+            "B.Sc. CS (Data Science and Visualization)", "BCA", "B.Sc. CD&F", "B.Sc. CS & HM", "B.Sc. Psychology", "B.Com.", "B.Com. DM and DM", "B.Com. (CA)", 
+            "B.Com. (PA)", "B.Com. Finance", "B.Com. (IT)", "BBA", "BBA (CA)", "B.A. English Lit.,"
+            ]
         self.pg_programmes = [
             "M.Sc. Mathematics", "M.Sc. Computer Science", "M.Com", "M.Com (CA)", "M.A. English Literature", 
             "MBA", "MCA"

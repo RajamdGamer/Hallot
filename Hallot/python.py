@@ -1,34 +1,79 @@
-import pandas as pd 
-import openpyxl
 import json
-l = [4,11,15,15]
-li = []
+import sqlite3
 
+# Load department and hall data from JSON files
+with open('selected_departments.json', 'r') as f:
+    departments = json.load(f)
 
-f = open('selected_rooms.json')
-selectedHalls = json.loads(f.read())
-print(selectedHalls)
-selectedRollNo = []
+with open('selected_halls.json', 'r') as f:
+    halls = json.load(f)
 
-output = {"A204 " : [["22BIT001"],["22BIT003"],["22BIT005"],["22BIT006"]], "A205" : [["22BAI002"],["22BAI004"],["22BAI006"],["22BAI008"]]}
+# Create department mapping
+department_mapping = {dept['name']: dept['code'] for dept in departments}
 
-df = pd.read_excel('2022_Name List - Deptwise.xlsx')
-print(df)
-#for _, row in df.iterrows():
- #   register_number = row['Register #']
-  #  
-   # selectedRollNo.append(register_number)
-output.update({"206": [["22Bai0034"],["22Bai0045"]]})
+# Fetch students' register numbers from the database
+def fetch_students_by_department(db_path):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT reg_no FROM students ORDER BY department_code")
+    students = cursor.fetchall()
+    conn.close()
+    
+    students_by_dept = {}
+    for reg_no in students:
+        department_code = reg_no[0][2:5]  # Extracting department code from reg_no
+        if department_code not in students_by_dept:
+            students_by_dept[department_code] = []
+        students_by_dept[department_code].append(reg_no[0])
+    
+    return students_by_dept
 
-for x, y in output.items():
-  print(x, y)
+# Allocation algorithm
+def allocate_halls(db_path):
+    students_by_dept = fetch_students_by_department(db_path)
+    hall_allocations = {}
 
-print(li)
-def allocation():
-    temp_list = []
-    currentIndex = 0
-    for i in range(0,len(selectedHalls)):
-        print(selectedHalls[i])
-        output.update({selectedHalls[i] : []})
-allocation()
-print(output)
+    for hall in halls:
+        hall_name = hall['name']
+        hall_capacity = hall['capacity']
+        hall_allocations[hall_name] = []
+        allocated = 0
+
+        for dept_code, students in students_by_dept.items():
+            while students and allocated < hall_capacity:
+                student = students.pop(0)
+                hall_allocations[hall_name].append(student)
+                allocated += 1
+
+            if allocated >= hall_capacity:
+                break
+
+    return hall_allocations
+
+# Save hall allocations to the database or an output file
+def save_allocations(allocations, db_path):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    cursor.execute('''CREATE TABLE IF NOT EXISTS hall_allocations (
+                      hall_name TEXT,
+                      reg_no TEXT
+                    )''')
+    
+    for hall, students in allocations.items():
+        for student in students:
+            cursor.execute("INSERT INTO hall_allocations (hall_name, reg_no) VALUES (?, ?)", (hall, student))
+    
+    conn.commit()
+    conn.close()
+
+# Main Function
+def main():
+    db_path = 'students.db'  # Path to your SQLite database
+    allocations = allocate_halls(db_path)
+    save_allocations(allocations, db_path)
+    print("Hall allocations completed and saved to the database.")
+
+if __name__ == "__main__":
+    main()
