@@ -122,7 +122,7 @@ class DepartmentSelectionApp:
             years_selected = []
             for j in range(3):
                 if self.check_vars_ug[i][j].get():
-                    years_selected.append(f"{j+1}")
+                    years_selected.append(str(j + 1))  # Ensure years are stored as strings
             if years_selected:
                 selected_courses[programme] = years_selected
 
@@ -131,11 +131,11 @@ class DepartmentSelectionApp:
             years_selected = []
             for j in range(2):
                 if self.check_vars_pg[i][j].get():
-                    years_selected.append(f"{j+1}")
+                    years_selected.append(str(j + 1))  # Ensure years are stored as strings
             if years_selected:
                 selected_courses[programme] = years_selected
 
-        # Save to JSON
+        # Save to JSON in the required format
         with open('selected_departments.json', 'w') as f:
             json.dump(selected_courses, f, indent=4)
 
@@ -144,9 +144,9 @@ class DepartmentSelectionApp:
         for programme, years in selected_courses.items():
             self.preview_text.insert(tk.END, f"{programme} - Years: {', '.join(years)}\n")
 
-        messagebox.showinfo("Selected Departments", f"Selected Departments saved successfully.")
+        messagebox.showinfo("Selected Departments", "Selected Departments saved successfully.")
         self.root.destroy()  # Close the window after saving
-
+    
 if __name__ == "__main__":
     root = tk.Tk()
     app = DepartmentSelectionApp(root)
