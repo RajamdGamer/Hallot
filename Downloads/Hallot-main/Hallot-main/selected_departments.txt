@@ -1,0 +1,68 @@
+B.Sc. - Cyber Security - Year 1
+B.Sc. - Cyber Security - Year 2
+B.Sc. - Cyber Security - Year 3
+B.Sc. - Dev Ops & Cloud - Year 1
+B.Sc. - Dev Ops & Cloud - Year 2
+B.Sc. - Dev Ops & Cloud - Year 3
+B.Sc. - CDF - Year 1
+B.Sc. - CDF - Year 2
+B.Sc. - CDF - Year 3
+B.Sc. - IT - Year 1
+B.Sc. - IT - Year 2
+B.Sc. - IT - Year 3
+B.Sc. - Psychology - Year 1
+B.Sc. - Psychology - Year 2
+B.Sc. - Psychology - Year 3
+B.Sc. - CS (AI&DS) - Year 1
+B.Sc. - CS (AI&DS) - Year 2
+B.Sc. - CS (AI&DS) - Year 3
+B.Sc. - Data Analytics - Year 1
+B.Sc. - Data Analytics - Year 2
+B.Sc. - Data Analytics - Year 3
+B.COM. - Commerce - Year 1
+B.COM. - Commerce - Year 2
+B.COM. - Commerce - Year 3
+B.Sc. - CS (FSWD) - Year 1
+B.Sc. - CS (FSWD) - Year 2
+B.Sc. - CS (FSWD) - Year 3
+B.COM. - (PA) - Year 1
+B.COM. - (PA) - Year 2
+B.COM. - (PA) - Year 3
+B.Sc. - CT - Year 1
+B.Sc. - CT - Year 2
+B.Sc. - CT - Year 3
+B.Sc. - CS - Year 1
+B.Sc. - CS - Year 2
+B.Sc. - CS - Year 3
+B.Sc. - GCD - Year 1
+B.Sc. - GCD - Year 2
+B.Sc. - GCD - Year 3
+B.A. - English - Year 1
+B.A. - English - Year 2
+B.A. - English - Year 3
+B.COM. - (IT) - Year 1
+B.COM. - (IT) - Year 2
+B.COM. - (IT) - Year 3
+B.Sc. - CS (DA) - Year 1
+B.Sc. - CS (DA) - Year 2
+B.Sc. - CS (DA) - Year 3
+B.Sc. CS&HM - Year 1
+B.Sc. CS&HM - Year 2
+B.Sc. CS&HM - Year 3
+B.COM. - DM - Year 1
+B.COM. - DM - Year 2
+B.COM. - DM - Year 3
+B.COM. - (CA) - Year 1
+B.COM. - (CA) - Year 2
+B.COM. - (CA) - Year 3
+B.COM. - (Finance) - Year 1
+B.COM. - (Finance) - Year 2
+B.COM. - (Finance) - Year 3
+M.COM - Year 1
+M.COM - Year 2
+M.COM - (CA) - Year 1
+M.COM - (CA) - Year 2
+M.Sc. - CS - Year 1
+M.Sc. - CS - Year 2
+M.A. - English - Year 1
+M.A. - English - Year 2
